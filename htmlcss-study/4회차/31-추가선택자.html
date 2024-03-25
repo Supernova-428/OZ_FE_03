@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>선택자 더 알아보기</title>
+    <style>
+        /*
+        기호와 함께 사용하는 속성 선택자
+        * : 값의 포함 여부
+        ^ : 값의 시작 여부
+        $ : 값의 끝 여부
+        */
+        [width *= "2"]{
+            border: 5px dashed red;
+        }
+
+        p > em{
+            color: blue;
+        }
+        /* 형제 선택자는 뒤에 오는 형제들을 대상으로 한다. */
+        #sam ~ p{
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <img src="images/mountain.jpg" width="120" alt="산">
+    <img src="images/mountain.jpg" width="120">
+    <img src="images/mountain.jpg" width="120" id="sam">
+    <p>산은 높아</p>
+    <p>높으면 비행기</p>
+    <p>비행기는 <em>빨라</em></p>
+    <p>빠르면 기차</p>
+</body>
+</html>
