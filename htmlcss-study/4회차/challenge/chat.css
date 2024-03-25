@@ -66,20 +66,18 @@ body{
     float: right;
     width: 120px;
     height: 120px;
-    border-radius: 10px;
-    border-style: outset;
-    border-width: 10px;
-    border-color: burlywood;
-    background-color: bisque;
+    border: none;
+    background-color: rgb(232, 163, 66);
     font-size: 24px;
+    color: #fff;
 }
 .chat-from_msg:focus{
     outline: none;
 }
 .chat-form_bt:active{
-    background-color: burlywood;
+    background-color: rgb(225, 148, 39);
     border-style: inset;
     border-width: 10px;
-    border-color: bisque;
-    color: #fff;
+    border-color: rgb(232, 163, 66);
+    color: #000;
 }
