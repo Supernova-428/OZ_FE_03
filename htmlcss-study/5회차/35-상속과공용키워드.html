@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>상속과 공용키워드</title>
+    <style>
+        .list{
+            /* 상속 o */
+            color: brown;
+            font-style: italic;
+            font-weight: 900;
+            /* 상속 x */
+            border: 3px dashed green;
+        }
+        ul{
+            border: inherit;
+        }
+        li:nth-child(3){
+            color: unset;
+            /* unset: 상속받을 것이 있으면 받고 없으면 안 받는다. */
+            font-style: initial;
+            font-weight: initial;
+        }
+    </style>
+</head>
+<body>
+    <h2>마라톤 대회 참가 기록</h2>
+    <div class="list">
+        <ul>
+            <li>새해맞이 대전 마라톤 대회</li>
+            <li>서울 국제 마라톤 대회</li>
+            <li>대전 대청호 벛꽃길 마라톤 대회</li>
+            <li>대전 3대하천 마라톤 대회</li>
+        </ul>
+    </div>
+</body>
+</html>
