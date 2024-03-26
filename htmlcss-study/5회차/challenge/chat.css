@@ -1,0 +1,83 @@
+/* 전체 기본 */
+*{
+    font-family: "Hi Melody", sans-serif;
+    font-size: 24px;
+    box-sizing: border-box;
+}
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+    margin: 0;
+}
+.container{
+    height: 100%;
+    background-color: bisque;
+}
+
+/* 스크린 크기 조정 */
+.chat-screen{
+    height: calc(100% - 120px);
+}
+
+/* 유저 정보 표시되는 부분 */
+.user{
+    background-color: #fff;
+    padding: 16px;
+    height: 80px;
+}
+.user_column{
+    float: left;
+}
+.user_pic{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 25px;
+    background-image: url(images/zoro.jpeg);
+    background-size: 50px;
+}
+.user_nic, .user_count{
+    margin: 0;
+}
+.user_count{
+    font-size: 18px;
+    color: gray;
+}
+
+/* 채팅 입력 창 */
+.chat-form{
+    height: 120px;
+    background-color: #fff;
+}
+.chat-form_field{
+    height: 120px;
+}
+.chat-from_msg{
+    width: calc(100% - 120px);
+    height: 120px;
+    border: none;
+    resize: none;
+    font-size: 28px;
+    padding: 10px;
+}
+.chat-form_bt{
+    float: right;
+    width: 120px;
+    height: 120px;
+    border: none;
+    background-color: rgb(232, 163, 66);
+    font-size: 24px;
+    color: #fff;
+}
+.chat-from_msg:focus{
+    outline: none;
+}
+.chat-form_bt:active{
+    background-color: rgb(225, 148, 39);
+    border-style: inset;
+    border-width: 10px;
+    border-color: rgb(232, 163, 66);
+    color: #000;
+}
