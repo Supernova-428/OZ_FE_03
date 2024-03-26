@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나만의 일기장</title>
+    <link rel="stylesheet" href="day4-diary.css">
+</head>
+<body>
+    <div class="title"><h1>나만의 일기장</h1></div>
+    <div class="day">
+        <p><input type="date" name="date" id="date"></p>
+        <label>
+            ☀️ <input type="radio" id="sunny" name="weather">
+        </label>
+        <label>
+            ☁️<input type="radio" id="cloudy" name="weather">
+        </label>
+        <label>
+            ☔️ <input type="radio" id="rainy" name="weather">
+        </label>
+        <label>
+            ❄️ <input type="radio" id="snowy" name="weather">
+        </label>
+        <p class="emotion">감정상태 🙁 <input type="range" name="emo" id="emo"> 😁</p>
+    </div>
+    <img src="images/zoro.jpeg" alt="눈사람 조로">
+    <div class="content">
+        <p><span class="snowman">눈사람</span>을 만들었다.</p>
+        <p>이름은 <span class="zoro">조로</span>다.</p>
+        <p>참 <span class="fun">재미</span>있었다.</p>
+    </div>
+    <h3>&copy;이요성</h3>
+</body>
+</html>

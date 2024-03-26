@@ -1,0 +1,43 @@
+html{
+    background-color: blanchedalmond;
+}
+*{
+    text-align: center;
+    box-sizing: border-box;
+    margin: auto;
+    padding: 5px;
+}
+.title{
+    border: 3px double black;
+    padding: 10px;
+    text-align: center;
+}
+.day{
+    border: 3px double black;
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+    text-align: right;
+}
+.day > *{
+    text-align: right;
+}
+img{
+    width: 80%;
+    padding: 50px;
+    border: 3px double black;
+}
+.content{
+    width: 80%;
+    border: 3px double black;
+    margin: auto;
+}
+.zoro{
+    font-size: 24px;
+}
+.snowman{
+    font-style: italic;
+}
+.fun{
+    color: red;
+}
