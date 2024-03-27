@@ -25,6 +25,7 @@
 .banner_button:hover{
     background-color: #a0856f;
     transition: 100ms;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {

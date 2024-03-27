@@ -15,6 +15,9 @@ header.header{
 
     justify-content: space-between;
 }
+.header-content li, .header-content_logo, .chat:hover{
+    cursor: pointer;
+}
 .header-content_logo{
     color: #8E694B;
     font-size: 2rem;

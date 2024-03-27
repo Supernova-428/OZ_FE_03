@@ -34,6 +34,7 @@
 }
 .footer_appbtn button:hover{
     color: #868B94;
+    cursor: pointer;
 }
 .footer_nav ul{
     display: flex;
@@ -53,6 +54,7 @@
 }
 .footer_nav ul li:hover{
     text-decoration: underline;
+    cursor: pointer;
 }
 .footer_info{
     padding: 1.5rem 0 6.25rem;
@@ -63,6 +65,7 @@
 }
 .footer_tos strong:hover{
     text-decoration: underline;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
