@@ -1,0 +1,20 @@
+body{
+    margin: 0; /* body마진을 제거하여 xy스크롤 제거 */
+    height: 100vh; /* 부모요소와 관계없는 뷰포트기준*/
+    width: 100vw;
+    background: linear-gradient(45deg,violet,orange);
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    width: 300px;
+    height: 100px;
+    color: teal;
+    font-size: 24px;
+    background-color: aliceblue;
+    border: 6px double yellowgreen;
+    border-radius: 10px;
+}
