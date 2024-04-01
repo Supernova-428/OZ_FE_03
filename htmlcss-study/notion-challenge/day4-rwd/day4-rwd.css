@@ -1,0 +1,25 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+h1{
+    color: #fff;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: green;
+}
+
+@media (min-width: 768px) {
+    body{
+        background: linear-gradient(green, white);
+    }
+    h1{
+        background: #fff;
+        color: #000;
+    }
+}
