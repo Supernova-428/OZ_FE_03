@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체를 만드는 생성자</title>
+</head>
+<body>
+    
+    <script>
+
+        // function BestSinger(){
+        //     this.name = "VOS"
+        //     this.member = "박지헌, 최현준, 김경록"
+        //     this.singing = function(){
+        //         console.log("니 이름 어쩌구")
+        //     }
+        // }
+
+        function BestSinger(name, member){
+            this.name = name
+            this.member = member
+        }
+
+        // const vos = new BestSinger()
+        // console.log(vos.name)
+        // console.log(vos.member)
+        // vos.singing()
+
+        const noel = new BestSinger("노을", "강균성, 전우성, 이상곤, 나성호")
+
+        console.log(noel.name)
+        console.log(noel.member)
+    </script>
+</body>
+</html>
