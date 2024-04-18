@@ -72,7 +72,7 @@ function displayTodos(){
 
 // 할일 추가
 todoForm.addEventListener('submit', function(e){
-    e.preventDefault() // 기존 기능 차단 -> 새로고침x
+    e.preventDefault() // -> 새로고침x
     
     const toBeAdded = {
         todoText: todoForm.todo.value,
