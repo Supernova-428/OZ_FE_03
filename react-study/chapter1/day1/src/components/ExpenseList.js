@@ -4,11 +4,14 @@ import ExpenseItem from './ExpenseItem';
 
 export default class ExpenseList extends Component {
   render() {
-    console.log('@@@', this.props.initialExpenses)
     return (
         <>
             <ul className='list'>
-                <ExpenseItem />
+                {this.props.initialExpenses.map(expense => {
+                    return(
+                        <ExpenseItem key={expense.id} expense={expense}/>
+                    )
+                })}
             </ul>
             <button className='btn'>
                 목록지우기
