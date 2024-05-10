@@ -4,6 +4,7 @@ import ExpenseItem from './ExpenseItem';
 
 export default class ExpenseList extends Component {
   render() {
+    console.log('@@@', this.props.initialExpenses)
     return (
         <>
             <ul className='list'>
