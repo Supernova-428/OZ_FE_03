@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import './ExpenseItem.css';
 import {MdDelete, MdEdit} from 'react-icons/md';
 
-import React from 'react'
-
 const ExpenseItem = (props) => {
   return (
     <li className='item'>

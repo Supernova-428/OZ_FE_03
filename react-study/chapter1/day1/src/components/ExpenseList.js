@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import './ExpenseList.css';
 import ExpenseItem from './ExpenseItem';
 
-import React from 'react'
-
 const ExpenseList = ({initialExpenses,handleDelete}) => {
   return (
     <> 
