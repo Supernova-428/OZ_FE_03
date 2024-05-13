@@ -11,9 +11,33 @@ const App = () => {
     {id: 3, charge: '맥북', amount: 20000},
   ])
 
+  const [charge, setCharge] = useState("")
+  const [amount, setAmount] = useState(0)
+
+  const handleCharge = (e) => {
+    setCharge(e.target.value)
+  }
+
+  const handleAmount = (e) => {
+    setAmount(e.target.valueAsNumber)
+  }
+
   const handleDelete = (id) => {
     const newExpense = expenses.filter(expense => expense.id !== id)
     setExpenses(newExpense)
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if(charge !== "" && amount > 0){
+      const newExpense = {id: crypto.randomUUID(), charge, amount}
+      const newExpenses = [...expenses, newExpense]
+      setExpenses(newExpenses)
+      setCharge("")
+      setAmount(0)
+    }else{
+      console.log(error)
+    }
   }
 
   return(
@@ -22,7 +46,7 @@ const App = () => {
         <h1>장바구니</h1>
         <div style={{width: '100%', backgroundColor: 'white', padding: '1rem'}}>
           {/* {Expense Form} */}
-          <ExpenseForm />
+          <ExpenseForm charge={charge} handleCharge={handleCharge} amount={amount} handleAmount={handleAmount} handleSubmit={handleSubmit}/>
         </div>
         <div style={{width: '100%', backgroundColor: 'white', padding: '1rem'}}>
           {/* {Expense List} */}
