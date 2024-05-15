@@ -26,7 +26,7 @@ const ExpenseForm = ({charge, handleCharge, amount, handleAmount, handleSubmit})
                         name='amount'
                         value={amount}
                         onChange={handleAmount}
-                        placeholder='예) 콜라'
+                        placeholder='예) 100'
                     />
                 </div>
             </div>
