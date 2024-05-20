@@ -5,7 +5,7 @@ import Requests from '../api/requests'
 
 const Banner = () => {
 
-    const [movie, setMovie] = useState([])
+    const [movie, setMovie] = useState(null)
 
     useEffect(() => {
       fetchData()
@@ -26,9 +26,44 @@ const Banner = () => {
         setMovie(movieDetail)
     }
 
-  return (
-    <div>Banner</div>
-  )
+     const truncate = (str, n) => {
+        return str?.length > n ? str.substring(0, n) + '...' : str
+     }
+
+    if (!movie) {
+        return (
+            <div>
+                loading...
+            </div>
+          )
+    }else{
+        return (
+          <div className='banner'
+          style={{
+            backgroundImage: `url('https://image.tmdb.org/t/p/original${movie.backdrop_path}')`,
+            backgroundPosition: 'top center',
+            backgroundSize: 'cover'
+            }}>
+            <div className='banner_contents'>
+                <h1 className='banner_title'>
+                    {movie.title || movie.name || movie.original_name}
+                </h1>
+                <div className='banner_buttons'>
+                    {movie.videos?.results[0]?.key ?
+                        <button className='banner_button play'>
+                            play
+                        </button>
+                        : null
+                    }
+                </div>
+                <p className='banner_description'>
+                    {truncate(movie.overview, 100)}
+                </p>
+            </div>
+          </div>
+        )
+    }
+
 }
 
 export default Banner
