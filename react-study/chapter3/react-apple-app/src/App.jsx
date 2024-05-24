@@ -2,6 +2,9 @@ import {Routes, Route, Outlet} from 'react-router-dom'
 import './App.css'
 import Nav from './components/Nav'
 import LoginPage from './pages/LoginPage'
+import MainPage from './pages/MainPage'
+import DetailPage from './pages/DetailPage'
+import SearchPage from './pages/SearchPage'
 
 const Layout = () => {
   return (
