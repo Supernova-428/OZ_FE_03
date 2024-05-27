@@ -5,6 +5,7 @@ import LoginPage from './pages/LoginPage'
 import MainPage from './pages/MainPage'
 import DetailPage from './pages/DetailPage'
 import SearchPage from './pages/SearchPage'
+import SignupPage from './pages/SignupPage'
 
 const Layout = () => {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path='main' element={<MainPage />} />
         <Route path=':movieId' element={<DetailPage />} />
         <Route path='search' element={<SearchPage />} />
+        <Route path='signUp' element={<SignupPage />} />
       </Route>
     </Routes>
     </>
