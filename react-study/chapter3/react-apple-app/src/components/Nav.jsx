@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import {styled} from "styled-components"
-import {getAuth, signInWithPopup, GoogleAuthProvider} from 'firebase/auth'
+import {getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged} from 'firebase/auth'
 import app from '../firebase'
 
 const Nav = () => {
@@ -21,6 +21,17 @@ const Nav = () => {
             setShow('false')
         }
     }
+
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                navigate('/')
+            }else if(user&&pathname==='/'){
+                navigate('/main')
+            }
+        })
+    }, [auth, navigate,pathname])
+    
 
     useEffect(() => {
         window.addEventListener('scroll', listener)
