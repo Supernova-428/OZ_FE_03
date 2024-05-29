@@ -8,7 +8,7 @@ import { AppContextProvider } from './contexts/AppContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <AppContextProvider value={{}}>
+  <AppContextProvider>
     <App />
   </AppContextProvider>
 );
