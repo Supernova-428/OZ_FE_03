@@ -17,7 +17,7 @@ const IncomeItem = ({id, name, cost}) => {
     <li className='list-group-item d-flex justify-content-between align-items-center'>
       {name}
       <div>
-        <span className='badge bg-secondary me-3'>{cost}</span>
+        <span className='badge bg-success me-3'>{cost}</span>
         <TiDelete onClick={handleDeleteIncome} size={'1.5rem'}/>
       </div>
     </li>
