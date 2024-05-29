@@ -35,7 +35,7 @@ const AddExpenseForm = () => {
         </div>
         <div>
           <label>비용</label>
-          <input required='required' type='number' className='form-control' id='cost' value={cost} onChange={(e) => setCost(e.target.value)}/>
+          <input required='required' type='number' className='form-control' id='cost' value={cost} onChange={(e) => setCost(e.target.valueAsNumber)}/>
         </div>
         <div className='row mt-3'>
           <div className='col-sm'>

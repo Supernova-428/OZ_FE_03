@@ -4,15 +4,17 @@ import { formatNumberToWon } from '../utils'
 
 const IncomeTotal = () => {
 
-  const {expenses} = useContext(AppContext)
+  const {incomes} = useContext(AppContext)
 
-  const total = expenses.reduce((total, item) => {
+  const total = incomes.reduce((total, item) => {
     return (total += item.cost)
   }, 0)
 
+  const alertType = total > 0 ? 'alert-success' : 'alert-danger'
+
   return (
-    <div className={'alert alert-secondary p-4'}>
-      <span>총 합계: {formatNumberToWon(total)}</span>
+    <div className={`alert p-4 ${alertType}`}>
+      <span>총 수입: {formatNumberToWon(total)}</span>
     </div>
   )
 }

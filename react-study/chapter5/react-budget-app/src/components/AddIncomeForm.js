@@ -30,12 +30,12 @@ const AddIncomeForm = () => {
     <form onSubmit={handleSubmit}>
       <div className='row'>
         <div className='col-sm col-lg-4'>
-          <label>지출</label>
+          <label>수입</label>
           <input required='required' type='text' className='form-control' id='name' value={name} onChange={(e) => setName(e.target.value)}/>
         </div>
         <div>
-          <label>비용</label>
-          <input required='required' type='number' className='form-control' id='cost' value={cost} onChange={(e) => setCost(e.target.value)}/>
+          <label>금액</label>
+          <input required='required' type='number' className='form-control' id='cost' value={cost} onChange={(e) => setCost(e.target.valueAsNumber)}/>
         </div>
         <div className='row mt-3'>
           <div className='col-sm'>
