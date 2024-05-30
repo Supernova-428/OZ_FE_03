@@ -3,6 +3,7 @@ import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios'
 import {fetchPosts} from './actions/post';
+import { delayCount } from './actions/count';
 
 function App() {
 
@@ -30,6 +31,10 @@ const handleSubmit = (e) => {
     dispatch({type: 'DECREMENT'})
   }
 
+  const handleDelayIncrement = () => {
+    dispatch(delayCount())
+  }
+
   return (
     <div className="App">
       <div>
@@ -55,6 +60,10 @@ const handleSubmit = (e) => {
       {' '}
       <button onClick={handleIncrement}>
         +
+      </button>
+      {' '}
+      <button onClick={handleDelayIncrement}>
+        + 1sec Delay
       </button>
       {' '}
       <button onClick={handleDecrement}>
