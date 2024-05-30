@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {createStore} from 'redux'
 import rootReducer from './reducer';
+import {Provider} from 'react-redux'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -12,18 +13,22 @@ const store = createStore(rootReducer)
 
 console.log(store.getState())
 
-const render = () => root.render(
+store.dispatch({
+  type: 'ADD_TODO',
+  text: '밥먹기'
+})
+
+root.render(
   <React.StrictMode>
-    <App
-      value={store.getState()}
-      onIncrement={() => store.dispatch({type: 'INCREMENT'})}
-      onDecrement={() => store.dispatch({type: 'DECREMENT'})}
-    />
+    <Provider store={store}>
+      <App
+        value={store.getState()}
+        onIncrement={() => store.dispatch({type: 'INCREMENT'})}
+        onDecrement={() => store.dispatch({type: 'DECREMENT'})}
+      />
+    </Provider>
   </React.StrictMode>
 );
-
-render()
-store.subscribe(render)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
