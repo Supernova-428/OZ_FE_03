@@ -11,21 +11,10 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const store = createStore(rootReducer)
 
-console.log(store.getState())
-
-store.dispatch({
-  type: 'ADD_TODO',
-  text: '밥먹기'
-})
-
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App
-        value={store.getState()}
-        onIncrement={() => store.dispatch({type: 'INCREMENT'})}
-        onDecrement={() => store.dispatch({type: 'DECREMENT'})}
-      />
+      <App />
     </Provider>
   </React.StrictMode>
 );
