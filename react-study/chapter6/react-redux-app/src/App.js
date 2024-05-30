@@ -1,29 +1,47 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
+import axios from 'axios'
 
 function App() {
 
   const counter = useSelector((state) => state.counter) // store.getState()
   const todos = useSelector((state) => state.todos)
-  const dispath = useDispatch() // store.dispatch(action)
+  const posts = useSelector((state) => state.posts)
+  const dispatch = useDispatch() // store.dispatch(action)
+
+  useEffect(() => {
+    fetchPosts()
+  }, [])
+  
+  async function fetchPosts(){
+    const response = await axios.get('https://jsonplaceholder.typicode.com/posts')
+    console.log('response', response)
+    dispatch({type: 'FETCH_POSTS', payload: response.data})
+  }
+
 const [todoValue, setTodoValue] = useState('')
 const handleSubmit = (e) => {
   e.preventDefault()
-  dispath({type: 'ADD_TODO', text: todoValue})
+  dispatch({type: 'ADD_TODO', text: todoValue})
   setTodoValue('')
 }
 
   const handleIncrement = () => {
-    dispath({type: 'INCREMENT'})
+    dispatch({type: 'INCREMENT'})
   }
 
   const handleDecrement = () => {
-    dispath({type: 'DECREMENT'})
+    dispatch({type: 'DECREMENT'})
   }
 
   return (
     <div className="App">
+      <div>
+        <ul>
+          {posts.map(post => <li key={post.id}>{post.title}</li>)} 
+        </ul>
+      </div>
       <div>
         <ul>
           {todos.map((todo, index) => <li key={index}>{todo}</li>)}
