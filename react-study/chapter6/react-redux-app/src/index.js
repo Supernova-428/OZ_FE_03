@@ -4,11 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {createStore} from 'redux'
-import counter from './reducer';
+import rootReducer from './reducer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const store = createStore(counter)
+const store = createStore(rootReducer)
+
+console.log(store.getState())
 
 const render = () => root.render(
   <React.StrictMode>
