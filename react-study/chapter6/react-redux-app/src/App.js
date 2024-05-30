@@ -1,17 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
-import {useState} from 'react'
-import ChildComponentA from './ChildComponentA';
 
-function App() {
-
-  const [inputValue, setInputValue] = useState('A')
+function App({value, onIncrement, onDecrement}) {
 
   return (
     <div className="App">
-      App Component<br/>
-      {inputValue}
-      <ChildComponentA inputValue={inputValue} setInputValue={setInputValue}/>
+      Clicked: {value} times
+      {' '}
+      <button onClick={onIncrement}>
+        +
+      </button>
+      {' '}
+      <button onClick={onDecrement}>
+        -
+      </button>
     </div>
   );
 }
