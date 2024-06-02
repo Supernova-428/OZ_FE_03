@@ -1,6 +1,6 @@
 import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { addTodo, deleteTodo, editTodo, toggleTodo } from './stores/todoSlice';
 
 function App() {
@@ -11,6 +11,8 @@ function App() {
   const [text, setText] = useState('')
   const [editId, setEditId] = useState(null)
   const [editText, setEditText] = useState('')
+  const [filterValue, setFilterValue] = useState('all')
+  const [filteredList, setFilteredList] = useState([])
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -47,14 +49,38 @@ function App() {
     setEditText('')
   }
 
+  const handleFilterVlaue = (e) => {
+    setFilterValue(e.target.value)
+  }
+
+  useEffect(
+    () => {
+      if (filterValue === 'all') {
+        setFilteredList(todos)
+      }else if (filterValue === 'completed') {
+        setFilteredList(todos.filter(todo => todo.completed))
+      }else{
+        setFilteredList(todos.filter(todo => !todo.completed))
+      }
+    },
+    [todos, filterValue]
+  )
+  
+  console.log(filterValue)
   return (
     <div className="App">
+      <h1>TODO LIST</h1>
+      <select defaultValue='all' onChange={handleFilterVlaue}>
+          <option value="all">전체</option>
+          <option value="completed">완료</option>
+          <option value="active">미완료</option>
+      </select>
       <form onSubmit={handleSubmit}>
         <input value={text} onChange={e => setText(e.target.value)}/>
-        <button type='submit'>Add Todo</button>
+        <button className='btn' type='submit'>Add Todo</button>
       </form>
       <ul>
-        {todos.map(todo => (
+        {filteredList.map(todo => (
           <li key={todo.id}>
             {todo.id === editId ? 
             <>
