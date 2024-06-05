@@ -6,7 +6,7 @@ export default async function handler(req, res) {
 
         const data = req.body
 
-        const client = await MongoClient.connect()
+        const client = await MongoClient.connect(process.env.MONGO_URI)
         const db =client.db('meetupDB')
 
         const meetupsCollection = db.collection('meetups')

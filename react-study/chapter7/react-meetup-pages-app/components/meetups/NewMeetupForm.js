@@ -1,10 +1,8 @@
 import React, { useRef } from 'react'
 import classes from './NewMeetupForm.module.css'
 import Card from '../ui/Card'
-import { useRouter } from 'next/router'
 
-const NewMeetupForm = () => {
-    const router = useRouter()
+const NewMeetupForm = ({router}) => {
 
     const titleInputRef = useRef()
     const imageInputRef = useRef()
